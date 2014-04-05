@@ -9,6 +9,8 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
+	
+	private String url = "http://25.177.135.201:4444/";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
