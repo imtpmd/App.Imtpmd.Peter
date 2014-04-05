@@ -4,5 +4,6 @@
     <string name="app_name">Pie4All</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <color name="background">#f5ea78</color>
 
 </resources>
