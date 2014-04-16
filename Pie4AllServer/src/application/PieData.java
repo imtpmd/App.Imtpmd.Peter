@@ -16,8 +16,8 @@ public class PieData
 	
 
 
-	private String[] categories = {"Vlaaien", "Cakes", "Bruidstaarten", "Verjaardagstaarten"};
-	private HashMap<String, String[]> products;
+	public String[] categories = {"Vlaaien", "Cakes", "Bruidstaarten", "Verjaardagstaarten"};
+	public HashMap<String, String[]> products;
 	private HashMap<String, String> productInfo;
 	
 	private PieData()

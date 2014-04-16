@@ -2,26 +2,177 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@color/background">
-    
+    android:background="@color/background"
+    android:orientation="vertical" >
 
-    
-    
-     <Button
-        android:id="@+id/button1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <!-- Info Categorie -->
+
+            <TextView
+                android:id="@+id/keuze_categorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Product:"
+                android:textColor="#ef7625"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Product_Naam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Product" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <!-- Info Beschrijving -->
+
+            <TextView
+                android:id="@+id/keuze_beschrijving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Beschrijving:"
+                android:textColor="#ef7625"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Product_Beschrijving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Beschrijving" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <!-- Aantal -->
+
+            <TextView
+                android:id="@+id/Product_Aantal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Aantal:" />
+
+            <EditText
+                android:id="@+id/Product_Aantal_Edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <!-- Prijs -->
+
+            <TextView
+                android:id="@+id/Product_Prijskop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Prijs per stuk:"
+                android:textColor="#ef7625"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Product_Prijs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="TextView"
+                android:textSize="16dp" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Balk Onder -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/balkonder" />
+
+    <!-- LOGO -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
         android:layout_alignParentRight="true"
-        android:text="Annuleer" 
-        />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+    <!-- TEKST -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:src="@drawable/pie4all" />
+
+    <!-- KNOPPEN -->
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Product_AnnuleerKnop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/imageView2"
         android:layout_alignParentLeft="true"
-       android:text="Bestel" />
+        android:text="Annuleer" />
+
+    <Button
+        android:id="@+id/Product_BestelKnop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Product_AnnuleerKnop"
+        android:layout_alignParentLeft="true"
+        android:text="Bestel" />
+
 </RelativeLayout>

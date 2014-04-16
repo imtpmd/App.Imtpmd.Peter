@@ -5,37 +5,31 @@ import hsleiden.app.pie4all.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
-	
-	private String url = "http://25.177.135.201:4444/";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
-		
-		Thread splashscreen = new Thread()
-		{
-			public void run()
-			{
-				try
-				{
+
+		Thread splashscreen = new Thread() {
+			public void run() {
+				try {
 					sleep(2000);
-				}
-				catch(Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
-				}
-				finally
-				{
-					startActivity(new Intent(getApplicationContext(), Main.class));
+				} finally {
+					startActivity(new Intent(getApplicationContext(),
+							Main.class));
 					finish();
 				}
 			}
 		};
 		splashscreen.start();
+
 	}
 
 	@Override
@@ -44,6 +38,5 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
 
 }
