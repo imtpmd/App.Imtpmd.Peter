@@ -2,24 +2,65 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@color/background" >
+    android:background="@color/background"
+    android:orientation="vertical" >
+    
+    
+    
+    
+    
+    
+    
+    
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
+    <!-- Balk Onder -->
+
+    <ImageView
+        android:id="@+id/balk"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/balkonder" />
+
+    <!-- LOGO -->
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
         android:layout_alignParentRight="true"
-        android:text="Annuleer" 
-        />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+    <!-- TEKST -->
+
+    <ImageView
+        android:id="@+id/Kop"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:src="@drawable/pie4all" />
+
+    <!-- KNOPPEN -->
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Product_AnnuleerKnop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/imageView2"
         android:layout_alignParentLeft="true"
-       android:text="Bevestig Bestelling" />
+        android:text="Annuleer" />
+
+    <Button
+        android:id="@+id/Product_BestelKnop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Product_AnnuleerKnop"
+        android:layout_alignParentLeft="true"
+        android:text="Bevestig Bestelling" />
 
 </RelativeLayout>
