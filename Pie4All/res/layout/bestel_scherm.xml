@@ -1,17 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical" >
-    
-    
-    
-    
-    
-    
-    
-    
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/persoons_gegevens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persoon Gegevens:"
+                android:textColor="#ef7625"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_naam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Naam:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/edit_naam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_adres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adres:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/edit_adres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_telefoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="Telefoon:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/edit_telefoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Email:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Overzicht_bestelling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overzicht bestelling:"
+                android:textColor="#ef7625"
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Product:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_prijs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Prijs per stuk:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/prijs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_totaal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Totaal:"
+                android:textColor="#ef7625"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/totaalprijs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="16dp" />
+        </TableRow>
+    </TableLayout>
 
     <!-- Balk Onder -->
 
@@ -22,7 +205,8 @@
         android:layout_alignParentBottom="true"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/balkonder" />
+        android:src="@drawable/balkonder"
+        tools:ignore="ContentDescription" />
 
     <!-- LOGO -->
 
@@ -32,7 +216,8 @@
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
     <!-- TEKST -->
 
@@ -43,23 +228,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="22dp"
-        android:src="@drawable/pie4all" />
+        android:src="@drawable/pie4all"
+        tools:ignore="ContentDescription" />
 
     <!-- KNOPPEN -->
 
     <Button
-        android:id="@+id/Product_AnnuleerKnop"
+        android:id="@+id/Bestel_Annuleerknop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView2"
+        android:layout_above="@+id/balk"
         android:layout_alignParentLeft="true"
         android:text="Annuleer" />
 
     <Button
-        android:id="@+id/Product_BestelKnop"
+        android:id="@+id/Bestel_Bestelknop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Product_AnnuleerKnop"
+        android:layout_above="@+id/Bestel_Annuleerknop"
         android:layout_alignParentLeft="true"
         android:text="Bevestig Bestelling" />
 

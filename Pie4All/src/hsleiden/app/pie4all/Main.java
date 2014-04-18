@@ -2,6 +2,8 @@ package hsleiden.app.pie4all;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import hsleiden.app.pie4all.R;
 import org.json.JSONArray;
@@ -27,7 +29,7 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Main extends FragmentActivity implements OnItemSelectedListener,OnItemClickListener {
-	
+
 	//Variabelen die we later nodig hebben
 	static Spinner categorie_Spinner;
 	static ListView producten_Lijst;	
@@ -41,14 +43,13 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 	public ServerCommunicator serverCommunicator;
 
 	@Override
-	// voert de volgende dingen uit tijdens creëren van pagina
+	// Voert de volgende dingen uit tijdens creeren van pagina
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		categorie_Spinner = (Spinner) findViewById(R.id.categorie_spinner);
 		categorieLijst = getCategories();
 
-		// De als laatste gekozen categorie wordt gekozen doormiddel van preferences
 
 		preferences = this.getSharedPreferences("spinnerSelection", 0);
 		categorie_Spinner.setSelection(preferences.getInt("spinnerSelection", 0));
@@ -76,7 +77,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 
 		ArrayList<HashMap<String, String>> lijst = getProductData(categorie);
 
-		// De gegevens die bij de categorie horen worden getoon in een listview
+		// De gegevens die bij de categorie horen worden getoont in een listview
 		simAdapter = new SimpleAdapter(this, lijst, R.layout.list_item,
 				new String[] { "naam", "list_prijs" }, new int[] {
 				R.id.list_product, R.id.list_prijs }) {
@@ -97,6 +98,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 				return v;
 			}
 		};
+		// Geeft adapter mee aan producten_lijst
 		producten_Lijst.setAdapter(simAdapter);
 	}
 
@@ -104,11 +106,17 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 	// Gaat naar product scherm
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
+
+
 		Intent intent = null;
 		intent = new Intent(getApplicationContext(), ProductScherm.class);
+
 		startActivity(intent);
+
+
 	}
 
+	// Haalt categorien van de server op
 	static ArrayList<String> getCategories() {
 		categorieLijst = new ArrayList<String>();
 		JSONObject jsonObject = new JSONObject();
@@ -122,7 +130,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 		try {
 			try {
 				// Dit IP adres moet IP adres van server zijn.
-				response = new ServerCommunicator(activity, "192.168.1.16",
+				response = new ServerCommunicator(activity, "192.168.1.12",
 						4444, jsonObject.toString()).execute().get();
 			} catch (ExecutionException e) {
 				e.printStackTrace();
@@ -161,7 +169,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 
 		return categorieLijst;
 	}
-
+	// Haalt producten op van server
 	public static ArrayList<HashMap<String, String>> getProductData(
 			int gekozenCategorie) {
 		product_Gegevens = new ArrayList<HashMap<String, String>>();
@@ -177,7 +185,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 		String response = null;
 		try {
 			try { // Dit IP adres moet IP adres van server zijn.
-				response = new ServerCommunicator(activity, "192.168.1.16",
+				response = new ServerCommunicator(activity, "192.168.1.12",
 						4444, jsonObject.toString()).execute().get();
 			} catch (ExecutionException e) {
 				e.printStackTrace();
@@ -198,7 +206,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 
 		JSONObject productobject = null;
 		ArrayList<HashMap<String, String>> productlist = new ArrayList<HashMap<String, String>>();
-
+		// Hashmap zorgt ervoord at producten_lijst waarden kunnen worden terugegeven
 		for (int i = 0; i < productarray.length(); i++) {
 			try {
 				productobject = productarray.getJSONObject(i);
@@ -244,7 +252,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 		String response = null;
 		try {
 			try { // Dit IP adres moet IP adres van server zijn.
-				response = new ServerCommunicator(activity, "192.168.1.16",
+				response = new ServerCommunicator(activity, "192.168.1.12",
 						4444, jsonObject.toString()).execute().get();
 			} catch (ExecutionException e) {
 				e.printStackTrace();
@@ -292,7 +300,7 @@ public class Main extends FragmentActivity implements OnItemSelectedListener,OnI
 		String response = null;
 		try {
 			try { // Dit IP adres moet IP adres van server zijn.
-				response = new ServerCommunicator(activity, "192.168.1.16",
+				response = new ServerCommunicator(activity, "192.168.1.12",
 						4444, jsonObject.toString()).execute().get();
 			} catch (ExecutionException e) {
 				e.printStackTrace();
