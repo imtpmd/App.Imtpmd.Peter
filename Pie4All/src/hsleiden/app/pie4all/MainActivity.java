@@ -3,7 +3,6 @@ package hsleiden.app.pie4all;
 import hsleiden.app.pie4all.R;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -18,12 +17,11 @@ public class MainActivity extends FragmentActivity {
 		Thread splashscreen = new Thread() {
 			public void run() {
 				try {
-					sleep(2000);
+					sleep(1900);
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
-					startActivity(new Intent(getApplicationContext(),
-							Main.class));
+					startActivity(new Intent(getApplicationContext(), Main.class));
 					finish();
 				}
 			}
